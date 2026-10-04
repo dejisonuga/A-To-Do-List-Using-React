@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TodoItem from "./TodoItem";
 import Delete from "./Delete";
-import Input from "./input";
+import Input from "./Input";
 
 function Add() {
   const [newAddition, setNewAddition] = useState("");
