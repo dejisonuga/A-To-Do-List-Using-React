@@ -1,10 +1,21 @@
-//CHALLENGE: Todo List Upgrade.
-//1. To separate the components of the App.jsx
-
-import React from "react";
+import React, {useState} from "react";
 
 function TodoItem({ children }) {
-  return <li>{children}</li>;
+
+  const [ isDone, setIsDone ] = useState( false );
+
+  function handleClick() {
+    setIsDone( prevValue => {
+      return !prevValue;
+    });
+  }
+  
+  return(<div onClick={handleClick} >
+    <li style={{ textDecoration: isDone ? "line-through" : "none" }}>
+      {children}
+    </li>
+  </div>)
+  
 }
 
 export default TodoItem;
